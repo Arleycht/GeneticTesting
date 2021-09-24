@@ -1,0 +1,94 @@
+initial_data: ''
+initial_position: 0
+initial_state: right
+padding: ' '
+reactions:
+  right:
+    01+:
+      move: R
+    ' ':
+      move: L
+      goto: read
+  read:
+    0:
+      write: c
+      move: L
+      goto: have0
+    1:
+      write: c
+      move: L
+      goto: have1
+    +:
+      write: ' '
+      move: L
+      goto: rewrite
+  have0:
+    '01':
+      move: L
+    +:
+      move: L
+      goto: add0
+  have1:
+    '01':
+      move: L
+    +:
+      move: L
+      goto: add1
+  add0:
+    ' 0':
+      write: O
+      move: R
+      goto: back0
+    1:
+      write: I
+      move: R
+      goto: back0
+    OI:
+      move: L
+  add1:
+    ' 0':
+      write: I
+      move: R
+      goto: back1
+    1:
+      write: O
+      move: L
+      goto: carry
+    OI:
+      move: L
+  carry:
+    ' 0':
+      write: 1
+      move: R
+      goto: back1
+    1:
+      write: 0
+      move: L
+  back0:
+    '01OI+':
+      move: R
+    c:
+      write: 0
+      move: L
+      goto: read
+  back1:
+    '01OI+':
+      move: R
+    c:
+      write: 1
+      move: L
+      goto: read
+  rewrite:
+    O:
+      write: 0
+      move: L
+    I:
+      write: 1
+      move: L
+    '01':
+      move: L
+    ' ':
+      move: R
+      goto: done
+  done:
+tape_size: 1024

@@ -1,0 +1,38 @@
+# Increments a binary number
+# Expected output:
+# 1100
+padding: ' '
+tape_size: 1024
+initial_data: '1011'
+initial_position: 0
+initial_state: main
+reactions:
+  # Boilerplate
+  end:
+    null
+  main:
+    None:
+      goto: right
+  # Go to rightmost digit
+  right:
+    '01':
+      move: R
+    ' ':
+      move: L
+      goto: carry
+  # Carry 1 until a 0
+  carry:
+    '1':
+      write: '0'
+      move: L
+    ' 0':
+      write: '1'
+      move: L
+      goto: return
+  return:
+    '01':
+      move: L
+    ' ':
+      move: R
+      goto: end
+  end:

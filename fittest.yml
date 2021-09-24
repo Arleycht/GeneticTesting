@@ -1,0 +1,14 @@
+initial_data: ''
+initial_position: -11
+initial_state: wAWwW
+padding: l
+reactions:
+  QoeBp: null
+  rAWwW: null
+  u: null
+  wAWwW:
+    '"': {}
+    '3': {}
+    None:
+      move: L
+tape_size: 1024

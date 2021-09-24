@@ -1,0 +1,15 @@
+# Go to right
+# 0 read 0 -> 0 write * R
+0
+0
+0
+*
+R
+# 0 read 1 -> 0 write * R
+0
+1
+0
+*
+R
+# 0 read ' ' -> 1 write * L
+0

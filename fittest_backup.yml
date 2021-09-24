@@ -1,0 +1,56 @@
+initial_data: ''
+initial_position: 3
+initial_state: Uv
+padding: l
+reactions:
+  O: null
+  SDHoLmxqvH:
+    n: {}
+  U: {}
+  UcSirGT:
+    '4': {}
+  Uv:
+    olV:
+      goto: UvH
+      move: R
+  UvH:
+    D:
+      goto: UvH
+      move: L
+    None:
+      move: R
+    S:
+      goto: mvqvH
+    livT:
+      goto: iiHDL
+      move: R
+      write: H
+  UvSirGTB:
+    (: {}
+  X:
+    '''': {}
+    None:
+      write: q
+    l?n;-:
+      goto: mvilF
+      move: L
+      write: o
+  bqxYGTz:
+    la{:
+      goto: X
+      move: R
+  iiHDL:
+    '#~':
+      move: R
+    lwF`:
+      goto: mvqvH
+      move: R
+      write: e
+  m: null
+  mvqvH:
+    None: {}
+    ln:
+      goto: bqxYGTz
+      move: R
+      write: l
+tape_size: 1024
